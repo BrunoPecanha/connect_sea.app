@@ -1,0 +1,59 @@
+<div class="page">
+  <div class="header">
+    <div>
+      <h1>Manifestos</h1>
+      <p>Lista de manifestos cadastrados.</p>
+    </div>
+
+    <button class="btn-back" routerLink="/">← Voltar</button>
+  </div>
+
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Número</th>
+          <th>Tipo</th>
+          <th>Navio</th>
+          <th>Origem</th>
+          <th>Destino</th>
+        </tr>
+      </thead>
+
+      <tbody *ngIf="manifestos.length === 0">
+        <tr>
+          <td colspan="5" class="empty">Nenhum manifesto encontrado.</td>
+        </tr>
+      </tbody>
+
+      <tbody *ngIf="manifestos.length > 0">
+        <tr *ngFor="let manifesto of manifestos">
+          <td>{{ manifesto.numero }}</td>
+
+          <td>
+            <span
+              class="badge"
+              [class.importacao]="manifesto.tipo === ManifestoTipo.Importacao"
+              [class.exportacao]="manifesto.tipo === ManifestoTipo.Exportacao"
+            >
+              {{ manifesto.tipo === ManifestoTipo.Importacao ? 'IMPORTAÇÃO' : 'EXPORTAÇÃO' }}
+            </span>
+          </td>
+
+          <td>{{ manifesto.navio }}</td>
+          <td>{{ manifesto.portoOrigem }}</td>
+          <td>{{ manifesto.portoDestino }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pagination" *ngIf="manifestos.length > 0">
+      <button class="page-btn" (click)="previousPage()" [disabled]="page === 1">← Anterior</button>
+
+      <span class="pagination-info"> Página {{ page }} de {{ totalPages }} </span>
+
+      <button class="page-btn primary" (click)="nextPage()" [disabled]="page >= totalPages">
+        Próxima →
+      </button>
+    </div>
+  </div>
+</div>
