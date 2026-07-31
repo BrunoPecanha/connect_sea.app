@@ -1,59 +1,167 @@
-# ConnectseaApp
+# Connect Sea Challenge - Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.11.
+Aplicação frontend desenvolvida como parte do desafio técnico da Connect Sea.
 
-## Development server
+O projeto consiste em uma aplicação web para gerenciamento e visualização de informações relacionadas a escalas e manifestos, consumindo uma API REST desenvolvida em .NET.
 
-To start a local development server, run:
+---
+
+## 🚀 Tecnologias utilizadas
+
+- Angular
+- TypeScript
+- SCSS
+- RxJS
+- Angular Router
+- HttpClient
+
+---
+
+## 📁 Estrutura do projeto
+
+```
+src/
+├── app/
+│   ├── enums/             # Enumerações utilizadas pela aplicação
+│   ├── models/            # Interfaces e modelos de dados
+│   ├── pages/             # Páginas da aplicação
+│   │   ├── home/          # Página inicial
+│   │   ├── escalas/       # Consulta de escalas
+│   │   └── manifestos/    # Consulta de manifestos
+│   │
+│   ├── services/          # Serviços para comunicação com API
+│   ├── app.config.ts      # Configurações globais da aplicação
+│   ├── app.routes.ts      # Definição das rotas
+│   └── app.component.ts   # Componente principal
+│
+├── environments/          # Configurações por ambiente
+├── assets/                # Arquivos estáticos
+└── styles.scss            # Estilos globais
+```
+
+---
+
+## ⚙️ Pré-requisitos
+
+Antes de executar o projeto, é necessário possuir instalado:
+
+- Node.js
+- npm
+- Angular CLI
+
+Instalação do Angular CLI:
+
+```bash
+npm install -g @angular/cli
+```
+
+---
+
+## 📥 Instalação
+
+Clone o repositório:
+
+```bash
+git clone <repository-url>
+```
+
+Acesse a pasta:
+
+```bash
+cd <project-folder>
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+---
+
+## 🔧 Configuração
+
+Configure a URL da API no arquivo:
+
+```
+src/environments/environment.ts
+```
+
+Exemplo:
+
+```typescript
+export const environment = {
+  production: false,
+  apiUrl: 'https://localhost:5001/api'
+};
+```
+
+---
+
+## ▶️ Executando a aplicação
+
+Para iniciar o servidor de desenvolvimento:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+A aplicação estará disponível em:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 📚 Funcionalidades
 
-## Building
+### Escalas
 
-To build the project run:
+Permite consultar informações de escalas cadastradas através da API.
 
-```bash
-ng build
-```
+Principais recursos:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+- Listagem de escalas
+- Paginação
+- Visualização dos dados da escala
 
-## Running unit tests
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+### Manifestos
 
-```bash
-ng test
-```
+Permite consultar manifestos cadastrados.
 
-## Running end-to-end tests
+Principais recursos:
 
-For end-to-end (e2e) testing, run:
+- Listagem de manifestos
+- Paginação
+- Consulta das informações do manifesto
 
-```bash
-ng e2e
-```
+---
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 🔌 Integração com API
 
-## Additional Resources
+A comunicação com o backend é realizada através de serviços Angular utilizando o `HttpClient`.
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Responsabilidades dos serviços:
+
+- Requisições HTTP
+- Conversão dos dados recebidos
+- Centralização da comunicação com backend
+
+---
+
+## 📝 Decisões técnicas
+
+- Utilização da arquitetura standalone do Angular.
+- Separação das responsabilidades entre páginas, serviços e modelos.
+- Uso de interfaces para tipagem dos dados.
+- Componentização visando facilitar manutenção e evolução.
+- Organização baseada em funcionalidades.
+
+---
+
+## 👨‍💻 Autor
+
+Bruno Martins Peçanha
