@@ -1,7 +1,5 @@
 # Connect Sea - Frontend
 
-Aplicação frontend desenvolvida como parte do desafio técnico da Connect Sea.
-
 O projeto consiste em uma aplicação web para gerenciamento e visualização de informações relacionadas a escalas e manifestos, consumindo uma API REST desenvolvida em .NET.
 
 ---
