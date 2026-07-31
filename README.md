@@ -1,4 +1,4 @@
-# Connect Sea Challenge - Frontend
+# Connect Sea - Frontend
 
 Aplicação frontend desenvolvida como parte do desafio técnico da Connect Sea.
 
