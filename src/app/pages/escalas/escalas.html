@@ -12,18 +12,18 @@
     <table>
       <thead>
         <tr>
-          <th>Navio</th>
           <th>Porto</th>
           <th>Status</th>
           <th>ETA</th>
           <th>ETB</th>
           <th>ETD</th>
+          <th>Manifestos</th>
         </tr>
       </thead>
 
       <tbody *ngIf="escalas.length === 0">
         <tr>
-          <td colspan="6" class="empty">
+          <td colspan="7" class="empty">
             Nenhuma escala encontrada.
           </td>
         </tr>
@@ -32,7 +32,6 @@
       <tbody *ngIf="escalas.length > 0">
         <tr *ngFor="let escala of escalas">
 
-          <td>{{ escala.navio }}</td>
 
           <td>{{ escala.porto }}</td>
 
@@ -57,11 +56,29 @@
             {{ escala.etd ? (escala.etd | date:'dd/MM/yyyy HH:mm') : '-' }}
           </td>
 
+          <td>
+            <div
+              class="manifestos"
+              *ngIf="escala.manifestos; else semManifesto"
+            >
+              <span
+                class="manifesto-badge"
+                *ngFor="let manifesto of escala.manifestos"
+              >
+                {{ manifesto.numero }}
+              </span>
+            </div>
+
+            <ng-template #semManifesto>
+              <span class="empty-value">-</span>
+            </ng-template>
+          </td>
+
         </tr>
       </tbody>
     </table>
 
-    <div class="pagination" *ngIf="escalas">
+    <div class="pagination" *ngIf="escalas.length > 0">
       <button 
         class="page-btn"
         (click)="previousPage()" 

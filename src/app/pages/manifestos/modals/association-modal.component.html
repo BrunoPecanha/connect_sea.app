@@ -1,0 +1,27 @@
+<div class="backdrop" *ngIf="visible">
+  <div class="modal">
+    <div class="header">
+      <h2>{{ titulo }}</h2>
+
+      <button class="close" (click)="cancelar()">✕</button>
+    </div>
+
+    <div class="body">
+      <label class="item" *ngFor="let item of itens">
+        <input
+          type="checkbox"
+          [checked]="item.selecionado"
+          (change)="item.selecionado = $event.target.checked"
+        />
+
+        {{ item.descricao }}
+      </label>
+    </div>
+
+    <div class="footer">
+      <button class="btn-secondary" (click)="cancelar()">Cancelar</button>
+
+      <button class="btn-primary" (click)="salvar()">Salvar</button>
+    </div>
+  </div>
+</div>

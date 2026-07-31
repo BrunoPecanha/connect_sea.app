@@ -144,3 +144,25 @@ tbody tr:hover {
   padding: 30px;
   color: #777;
 }
+
+
+.manifestos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.manifesto-badge {
+  background: #e0e7ff;
+  color: #1e40af;
+
+  padding: 4px 10px;
+  border-radius: 12px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.empty-value {
+  color: #94a3b8;
+}

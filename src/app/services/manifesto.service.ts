@@ -13,4 +13,10 @@ export class ManifestoService extends BaseService<Manifesto> {
   constructor(http: HttpClient) {
     super(http, `${environment.api}/manifesto`);
   }
+
+  updateEscalas(id: number, escalas: number[]) {
+    return this.http.put<void>(`${this.endpoint}/escalas/${id}`, {
+      escalas
+    });
+  }
 }

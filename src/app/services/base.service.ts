@@ -9,7 +9,7 @@ export abstract class BaseService<T> {
     protected endpoint: string
   ) { }
 
-  getById(id: number): Observable<T> {
+  getById<T>(id: number): Observable<T> {
     return this.http.get<T>(`${this.endpoint}/${id}`);
   }
 
@@ -19,11 +19,11 @@ export abstract class BaseService<T> {
     );
   }
 
-  create(command: unknown): Observable<T> {
+  create(command: any): Observable<T> {
     return this.http.post<T>(this.endpoint, command);
   }
 
-  update(id: number, command: unknown): Observable<void> {
+  update(id: number, command: any): Observable<void> {
     return this.http.put<void>(`${this.endpoint}/${id}`, command);
   }
 

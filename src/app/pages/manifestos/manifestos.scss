@@ -137,3 +137,74 @@ tbody tr:hover {
   padding: 30px;
   color: #777;
 }
+
+.actions-column,
+.actions {
+  width: 80px;
+  text-align: center;
+}
+
+.icon-button {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color .2s;
+}
+
+.icon-button ion-icon {
+  font-size: 20px;
+  color: #2563eb;
+}
+
+.icon-button:hover {
+  background: #eff6ff;
+}
+
+.success-toast {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin: 16px 0;
+  padding: 14px 18px;
+
+  border: 1px solid #86efac;
+  background: #dcfce7;
+  color: #166534;
+
+  border-radius: 8px;
+
+  animation: fadeIn .25s ease;
+}
+
+.success-icon {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #16a34a;
+  color: white;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,11 +1,13 @@
-import { EscalaStatusEnum } from "../enums/escala-status.enum";
+import { ManifestoResumo } from "./manifesto-resumo";
 
 export interface Escala {
   id: number;
   navio: string;
   porto: string;
-  status: EscalaStatusEnum;
-  eta: string;
-  etb?: string;
-  etd?: string;
+  status: number;
+  eta: Date;
+  etb?: Date;
+  etd?: Date;
+
+  manifestos: ManifestoResumo[];
 }
