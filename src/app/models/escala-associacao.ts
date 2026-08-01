@@ -4,5 +4,6 @@ export interface EscalaAssociacao {
   id: number;
   porto: string;
   selecionado: boolean
-  cancelado: boolean
+  cancelado: boolean,
+  data: Date;
 }

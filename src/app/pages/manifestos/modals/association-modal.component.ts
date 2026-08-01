@@ -6,7 +6,8 @@ export interface AssociationItem {
   id: number;
   descricao: string;
   selecionado?: boolean;
-  cancelado: boolean
+  cancelado: boolean;
+  data: Date;
 }
 
 @Component({

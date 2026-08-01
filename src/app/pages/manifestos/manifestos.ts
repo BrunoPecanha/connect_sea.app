@@ -70,7 +70,8 @@ export class Manifestos implements OnInit {
           id: x.id,
           descricao: x.porto,
           selecionado: x.selecionado,
-          cancelado: x.cancelado
+          cancelado: x.cancelado,
+          data: x.data
         }));
 
         this.showAssociationModal = true;

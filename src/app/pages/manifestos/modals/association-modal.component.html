@@ -10,11 +10,12 @@
       <label class="item" *ngFor="let item of itens">
         <input
           type="checkbox"
+          [disabled]="item.cancelado"
           [checked]="item.selecionado"
           (change)="item.selecionado = $event.target.checked"
         />
 
-        {{ item.descricao }}
+        {{ item.descricao }} - {{ item.data |  date:'dd/MM/yyyy HH:mm' }} - {{ item.cancelado ? 'Cancelado' : 'Disponível' }}
       </label>
     </div>
 
